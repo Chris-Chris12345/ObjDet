@@ -32,12 +32,15 @@ img2 = cv2.imread("C:\OpenCV with python\ObjDetection\images.jpeg",0)
 #Simple blob detector regions (blobs) based on area, circularity, convexity and inertia
 params = cv2.SimpleBlobDetector_Params()#Object to store filtering parameters
 params.filterByArea = True
-params.minArea = 100
+params.filterByColor = True
+params.blobColor = 255
+params.minArea = 1500
+params.maxArea = 15000
 params.filterByCircularity = True
-params.minCircularity = 0.9
-params.filterByConvexity = True
+params.minCircularity = 0.6
+params.filterByConvexity = False
 params.minConvexity = 0.2
-params.filterByInertia = True
+params.filterByInertia = False
 params.minInertiaRatio = 0.01
 
 blobDet = cv2.SimpleBlobDetector_create(params)
